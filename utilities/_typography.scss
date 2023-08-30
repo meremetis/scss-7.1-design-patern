@@ -1,0 +1,30 @@
+/* stylelint-disable selector-max-type */
+@use 'mixins' as mix;
+@use 'various' as *;
+
+%h1 {  @include mix.typo(39.81, $fw-medium, -1.5);  }
+
+%h2 {  @include mix.typo(33.18, $fw-medium, -.5);   }
+
+%h3 {  @include mix.typo(27.65, $fw-regular, 0);   }
+
+%h4 {  @include mix.typo(23.04, $fw-regular, .25); }
+
+%h5 {  @include mix.typo(19.2, $fw-regular, 0);   }
+
+%h6 {  @include mix.typo(15.1, $fw-medium, .15);  }
+
+%small { @include mix.typo(13.33, $fw-regular, 0 ); }
+
+%title-lg { @include mix.typo(40, $fw-bold, 0); }
+
+%subtitle-xs { @include mix.typo(9, $fw-light, .07);   }
+
+%subtitle-sm { @include mix.typo(12, $fw-medium, .085);   }
+
+%subtitle-md { @include mix.typo(14, $fw-medium, .1);   }
+
+%subtitle-lg { @include mix.typo(16, $fw-regular, .15); }
+
+$body-font-family: 'Inter', sans-serif;
+$heading-font-family: 'Inter', sans-serif;

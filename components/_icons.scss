@@ -1,0 +1,71 @@
+@use 'sass:math';
+@use '../abstracts' as *;
+
+.red-cross {
+    color: $alizarin-crimson;
+    width: 25px;
+    height: 25px;
+}
+
+.white-cross {
+    color: $white;
+    width: 25px;
+    height: 25px;
+}
+
+.cross {
+    // using css custom properties to allow it's values be...
+    // ... adjustable by custom classes that'll use it.
+    --cross-size: 23.1px;
+    --cross-width: calc(var(--cross-size) / 3.3);
+    --cross-color: #{$white};
+
+    position: relative;
+    flex-shrink: 0;
+    width: var(--cross-size);
+    height: var(--cross-size);
+
+    &::before, &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        border-radius: var(--cross-width);
+        background: var(--cross-color);
+    }
+
+    &::before {
+        width: var(--cross-size);
+        height: var(--cross-width);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &::after {
+        width: var(--cross-width);
+        height: var(--cross-size);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &.black {
+
+        &::before, &::after {
+            background-color: $black;
+        }
+    }
+
+    &.red {
+
+        &::before, &::after {
+            background-color: $alizarin-crimson;
+        }
+    }
+
+    &.white {
+
+        &::before, &::after {
+            background-color: $white;
+        }
+    }
+}

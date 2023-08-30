@@ -1,0 +1,27 @@
+// Generic
+$base-spacing: 1rem;
+$bs: $base-spacing;
+$xxs: $bs * .115;
+$xs: $bs * .25; // 4px
+$sm: $bs * .75; // 12px
+$md: $bs * 1; // 16px
+$lg: $bs * 1.75; // 28px
+$xl: $bs * 2.75; // 44px
+$xxl: $bs * 4.5; // 72px
+
+// Elements
+$header-height: 70px;
+$footer-height: 70px;
+$header-subtitle-height: 20px;
+$main-min-height: calc(100vh - #{$header-height + $footer-height + $header-subtitle-height});
+$header-main-logo-height: $header-height + $header-subtitle-height;
+$hero-height: 500px;
+$hero-slide-stamp: 150px;
+$section-spacing: $xl;
+
+// Store Elements
+$store-header-height: 12.5rem;
+$store-footer-height: 7rem;
+
+// SEO and Accessibility
+$minimum-touch-elements-height: 44px;

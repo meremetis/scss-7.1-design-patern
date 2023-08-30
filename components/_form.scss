@@ -1,0 +1,151 @@
+@use '../abstracts' as *;
+
+.form-container {
+    @include center-content;
+
+    padding: $xl 0 $xxl;
+
+    &.disabled {
+        opacity: .33;
+        pointer-events: none;
+    }
+}
+
+.form-loader {
+    @include center;
+
+    z-index: $z-highlight;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: $md;
+
+    @include mq(laptop) {
+
+        &.user {
+            width: 50%;
+        }
+    }
+}
+
+.form-subtitle {
+    font-weight: 700;
+}
+
+.input-content {
+    display: flex;
+    flex-direction: column;
+    gap: $xs;
+}
+
+.invalid-feedback {
+    display: flex;
+    flex-direction: column;
+    gap: $sm;
+    font-size: .75rem;
+    font-weight: 700;
+    color: $red-crimson;
+}
+
+.facebook-button {
+    @include center-content;
+
+    cursor: pointer;
+    padding: $sm;
+    gap: $md;
+    border: 1px solid  $facebook;
+    border-radius: $base-border-radius;
+
+    &:hover {
+        background-color: $facebook;
+
+        .facebook-button-text {
+            color: $white;
+        }
+    }
+}
+
+.facebook-icon-container {
+    @include center-content;
+
+    width: 25px;
+    height: 25px;
+    background: $facebook;
+    border-radius: 50%;
+}
+
+.facebook-icon {
+    color: $white;
+}
+
+.input-icon {
+    padding-right: $sm;
+    cursor: pointer;
+}
+
+.form-checkbox {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+
+    &.active {
+        outline-color: $red-crimson;
+        outline-style: auto;
+    }
+}
+
+.form-check-content {
+    display: flex;
+    align-items: center;
+    gap: $md;
+}
+
+.form-control {
+    display: flex;
+    align-items: center;
+    gap: $sm;
+    border: 1px solid $boulder;
+
+    &.disabled {
+        background-color: rgb(118 118 118 / 40%);
+    }
+
+    &.active {
+        border-color: $red-crimson;
+    }
+}
+
+.form-input {
+    width: 100%;
+    border: none;
+    padding: $xs;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled {
+        background: none;
+    }
+}
+
+.required-input {
+
+    &::after {
+        content: '*';
+    }
+}
+
+.required-terms-input {
+
+    &::before {
+        content: '*';
+    }
+}

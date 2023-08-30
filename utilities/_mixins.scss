@@ -1,0 +1,36 @@
+@use 'sass:map';
+@use 'breakpoints' as *;
+@use 'functions' as fn;
+
+@mixin mq($key) {
+    $size: map.get($breakpoints, $key);
+
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin square($size, $bg, $radius) {
+    width: $size;
+    height: $size;
+}
+
+@mixin typo($size, $weight, $spacing) {
+    font-weight: $weight;
+    font-size: #{fn.sp-to-rem($size)}rem;
+    letter-spacing: #{fn.spacing($spacing, fn.rem-to-px($size))}px;
+}
+
+@mixin center-content() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin center() {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}

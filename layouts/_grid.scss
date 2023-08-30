@@ -1,0 +1,80 @@
+@use './../abstracts/mixins' as mix;
+@use './../abstracts/sizes' as s;
+@use './../abstracts/breakpoints' as *;
+@use 'sass:math';
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 s.$md;
+    width: 100%;
+    max-width: 100%;
+}
+
+@each $key, $value in $breakpoints {
+    @include mix.mq($key) {
+
+        .container {
+            width: $value;
+        }
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.align-items-space-between {
+    align-items: space-between;
+}
+
+.align-items-space-around {
+    align-items: space-around;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+[class^='col-'] {
+    flex-basis: 100%;
+}
+
+$columns: 12;
+
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        flex: 0 1 (math.div(100%, (math.div($columns, $i))));
+    }
+
+    .col-offset-#{$i} {
+        margin-left: (math.div(100%, (math.div($columns, $i))));
+    }
+}
+
+@each $key, $value in $breakpoints {
+    @include mix.mq($key) {
+        @for $i from 1 through $columns {
+            .col-#{$key}-#{$i} {
+                flex: 0 1 (math.div(100%, (math.div($columns, $i))));
+            }
+
+            .col-offset-#{$key}-#{$i} {
+                margin-left: (math.div(100%, (math.div($columns, $i))));
+            }
+        }
+    }
+}

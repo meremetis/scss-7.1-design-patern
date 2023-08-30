@@ -1,0 +1,11 @@
+// npm vendors
+// @forward '/node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+// @forward '/node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+// @forward '~ngx-toastr/toastr';
+
+@forward 'base';
+@forward 'themes';
+@forward 'layouts';
+@forward 'pages';
+@forward 'vendors';
+@forward 'components';

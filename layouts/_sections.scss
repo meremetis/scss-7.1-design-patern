@@ -1,0 +1,16 @@
+@use './../abstracts' as *;
+
+:root {
+    --section-bg: #{$white};
+    --section-color: #{$dark};
+}
+
+.section {
+    padding: $section-spacing 0;
+    margin: $section-spacing 0;
+}
+
+.intro-text {
+    color: $black;
+    margin-bottom: $md;
+}
